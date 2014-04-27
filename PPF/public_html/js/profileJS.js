@@ -3,24 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var prevID = "notificationContent";
+var prevContentID = "notificationContent";
 
-function changeTab(curId)
+window.onload = function()
 {
-    if (curId === prevId)
+    setupContent();
+};
+
+function setupContent()
+{
+    var childContent = document.getElementById('tabsContent').childNodes;
+    for (var i = 0; i < childContent.length; i++)
+    {
+        if (childContent[i].id !== undefined && childContent[i].id !== null)
+        {
+            if (childContent[i].id === prevContentID)
+            {
+                childContent[i].className = "selectedContent";
+            }
+            else
+            {
+                childContent[i].className = "unselectedContent";
+            }
+        }
+        
+    }
+}
+
+function changeContent(curContentID)
+{
+    if (curContentID === prevContentID)
         return;
-    var prevTabId = prevId + 'Tab';
-    var curTabId = curId + 'Tab';
-
-    var prevTab = document.getElementById(prevTabId);
-    var curTab = document.getElementById(curTabId);
-    var prevTabContent = document.getElementById(prevId);
-    var curTabContent = document.getElementById(curId);
-    prevTabContent.style.display = 'none';
-    curTabContent.style.display = 'block';
-    setCookie(tabName, curId, tabExpires);
-    curTab.className = "selectedTab";
-    prevTab.className = prevTab.className.replace("selectedTab", "unselectedTab");
-
-    prevId = curId;
+    
+    var prevContent = document.getElementById(prevContentID);
+    var curContent = document.getElementById(curContentID);
+    prevContent.className = "unselectedContent";
+    curContent.className = "selectedContent";
+    prevContentID = curContentID;
 }

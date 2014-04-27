@@ -7,4 +7,42 @@ and open the template in the editor.
     Created on : Apr 26, 2014, 7:17:47 PM
     Author     : Dlock
 */
+.unselectedContent
+{
+    display: none;
+    border-radius: 5px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #000;
+    text-wrap: normal;
+}
+.selectedContent
+{
+    display: block;
+    border-radius: 5px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #000;
+    text-wrap: normal;
+}
+#tabs
+{
+    float: none;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    -webkit-transform: translate(-50px);
+    transform: translate(-50px);
+}
+#tabs li
+{
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: tabs;
+    font-weight: bold;
+    color: #1636B8;
 
+    border-radius: 5px;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}

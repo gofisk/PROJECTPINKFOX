@@ -10,7 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         
-        <link rel="stylesheet" href="css/mainLayout.css" type="text/css">
+        <link rel="stylesheet" href="css/profileLayout.css" type="text/css">
+        <script type="text/javascript" src="js/profileJS.js"></script>
         
         <link rel="stylesheet" href="css/mainLayout.css" type="text/css">
         <script type="text/javascript" src ="js/mainJS.js"></script>
@@ -18,16 +19,16 @@ and open the template in the editor.
     <body>
         <div>
             <ul id="tabs">
-                <li id="notificationTab" onclick="changeTab('main')">Notification</li>
-                <li id="currentGameTab" onclick="changeTab('main')">Current Game</li>
+                <li id="notificationTab" onclick="changeContent('notificationContent')">Notification</li>
+                <li id="currentGameTab" onclick="changeContent('currentGameContent')">Current Game</li>
             </ul>
         </div>
         <div id="tabsContent">
             <div id="notificationContent" class="unselectedContent">
-                
+                Test Notification text
             </div>
             <div id="currentGameContent" class="unselectedContent">
-                
+                Test Game Content text
             </div>
         </div>
     </body>
