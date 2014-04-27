@@ -9,6 +9,11 @@ and open the template in the editor.
         <title>@username Profile</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        
+        <link rel="stylesheet" href="css/mainLayout.css" type="text/css">
+        
+        <link rel="stylesheet" href="css/mainLayout.css" type="text/css">
+        <script type="text/javascript" src ="js/mainJS.js"></script>
     </head>
     <body>
         <div>
@@ -16,6 +21,14 @@ and open the template in the editor.
                 <li id="notificationTab" onclick="changeTab('main')">Notification</li>
                 <li id="currentGameTab" onclick="changeTab('main')">Current Game</li>
             </ul>
+        </div>
+        <div id="tabsContent">
+            <div id="notificationContent" class="unselectedContent">
+                
+            </div>
+            <div id="currentGameContent" class="unselectedContent">
+                
+            </div>
         </div>
     </body>
 </html>
