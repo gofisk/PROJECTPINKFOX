@@ -19,8 +19,9 @@ and open the template in the editor.
     <body>
         <div>
             <ul id="tabs">
-                <li id="notificationTab" onclick="changeContent('notificationContent')">Notification</li>
-                <li id="currentGameTab" onclick="changeContent('currentGameContent')">Current Game</li>
+                <li class="unselectedTab" id="notificationTab" onclick="changeContent('notification')">Notification</li>
+                <li class="unselectedTab" id="currentGameTab" onclick="changeContent('currentGame')">Current Game</li>
+                <li class="unselectedTab" id="settingsTab" onclick="changeContent('settings')">Settings</li>
             </ul>
         </div>
         <div id="tabsContent">
@@ -29,6 +30,9 @@ and open the template in the editor.
             </div>
             <div id="currentGameContent" class="unselectedContent">
                 Test Game Content text
+            </div>
+            <div id="settingsContent" class="unselectedContent">
+                Test Settings Content text
             </div>
         </div>
     </body>

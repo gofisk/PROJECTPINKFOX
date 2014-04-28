@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var prevContentID = "notificationContent";
+var prevID = "notification";
 
 window.onload = function()
 {
@@ -12,32 +12,26 @@ window.onload = function()
 
 function setupContent()
 {
-    var childContent = document.getElementById('tabsContent').childNodes;
-    for (var i = 0; i < childContent.length; i++)
-    {
-        if (childContent[i].id !== undefined && childContent[i].id !== null)
-        {
-            if (childContent[i].id === prevContentID)
-            {
-                childContent[i].className = "selectedContent";
-            }
-            else
-            {
-                childContent[i].className = "unselectedContent";
-            }
-        }
-        
-    }
+    var loadedContent = document.getElementById(prevID+"Content");
+    var loadedTab = document.getElementById(prevID+"Tab");
+    loadedContent.className = "selectedContent";
+    loadedTab.className = "selectedTab";
 }
 
-function changeContent(curContentID)
+function changeContent(curID)
 {
-    if (curContentID === prevContentID)
+    if (curID === prevID)
         return;
     
-    var prevContent = document.getElementById(prevContentID);
-    var curContent = document.getElementById(curContentID);
+    var prevContent = document.getElementById(prevID+"Content");
+    var curContent = document.getElementById(curID+"Content");
+    var prevTab = document.getElementById(prevID+"Tab");
+    var curTab = document.getElementById(curID+"Tab");
+    
+    prevTab.className = "unselectedTab";
+    curTab.className = "selectedTab";
     prevContent.className = "unselectedContent";
     curContent.className = "selectedContent";
-    prevContentID = curContentID;
+    
+    prevID = curID;
 }

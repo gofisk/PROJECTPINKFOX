@@ -10,11 +10,6 @@ and open the template in the editor.
 .unselectedContent
 {
     display: none;
-    border-radius: 5px;
-    padding: 10px;
-    border-style: solid;
-    border-color: #000;
-    text-wrap: normal;
 }
 .selectedContent
 {
@@ -25,16 +20,7 @@ and open the template in the editor.
     border-color: #000;
     text-wrap: normal;
 }
-#tabs
-{
-    float: none;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    -webkit-transform: translate(-50px);
-    transform: translate(-50px);
-}
-#tabs li
+.unselectedTab
 {
     display: inline-block;
     padding: 5px 10px;
@@ -45,4 +31,25 @@ and open the template in the editor.
     border-radius: 5px;
     border-left: 2px solid #000;
     border-right: 2px solid #000;
+}
+.selectedTab
+{
+    display: inline-block;
+    padding: 5px 10px;
+    font-family: tabs;
+    font-weight: bold;
+    color: #E3620B;
+
+    border-radius: 5px;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+#tabs
+{
+    float: none;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    -webkit-transform: translate(-50px);
+    transform: translate(-50px);
 }
