@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="css/loginLayout.css">
-  <script type="text/javascript" src ="js/mainJS.js"></script>
-  <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-</head>
-<body>
-<div class="container">
-  <form method="post" action="login.html" class="login">
-    <p>
-      <label for="login">Email:</label>
-      <input type="text" name="login" id="login" value="name@example.com">
-    </p>
+<html>
+<title>Trivia Login</title>	
+<link rel="stylesheet" type="text/css" href="css/loginLayout.css" />	
+<script type="text/javascript" src ="js/mainJS.js"></script>
+<body class="signin">
+<!--
+<div class="topHead">
+	<a href="index.html">Take me home!</a>
+</div>
+-->
+<div id="content">
+	<div id="inner">
+		<h1 id="signinLogo"><a href="index.html"></a></h1>
+		
+		<div id="signinBlock">
+			<!--<h1>Eagan High School Trivia</h1>-->
+			<span class="formContainer">			    
+ 				<form id="signInForm" action="login.html" method="POST">
+					<span>
+						<input class="fillin" autofocus name="Username" value="" title="Username" type="Username" required placeholder="Username" />
+						<span class="message"></span>
+					</span>
+					
+					<span>
+						<input class="fillin" name="password" title="Password" type="password" required placeholder="Password" />
+				
+						<span class="message"></span>
+					</span>
+				
+					<div class="error">
+						<span class="message"></span>
+					</div>
 
-    <p>
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" value="4815162342">
-    </p>
+					<div class="buttonWrap">
+						<input type="hidden" name="persist" value="true" />
+						<input type="hidden" name="returnTo" value="/" />
 
-    <p class="login-submit">
-      <button type="submit" class="login-button">Login</button>
-    </p>
+						
 
-    <p class="forgot-password"><a href="login.html">Forgot your password?</a></p>
-    <div class="homepage"><a href="home.html">Home</a></div>
-  </form>
-  </div>
+						<input class="button" type="submit" alt="Sign in!" value="Let's Go" />
+					</div>
+				</form>	
+			</span>
+		</div>
+	</div>
+</div>
+	
+	
 </body>
+
 </html>

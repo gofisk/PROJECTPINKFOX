@@ -1,306 +1,495 @@
+﻿/* INCLUDE (authentication/styles/base.css) */
+/*============================================================
+ Resets
+============================================================*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	}
+ol, ul { list-style:none; }
+
+/* Form field focus style */
+:focus { outline:0; }
+
+/* Form outline / Firefox */
+input[type="submit"]::-moz-focus-inner, button::-moz-focus-inner {   
+	border : 0px;
+}
+	
+/* = HTML 5
+----------------------------------------------- */
+article,main,footer,header,section { margin:0; padding:0; display:block; }
+aside,details { margin:0; padding:0; }
+
+/*============================================================
+ Clearfix
+============================================================*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
+/*============================================================
+ Generics
+============================================================*/
+html { height:100%;	}
 body {
+	height:100%;
+	line-height:1;
+	font:13px/18px "Lucida Grande", Arial, Verdana, sans-serif;
+	color:#666;
+	}
+
+b, strong { font-weight:bold; line-height:1; }
+i, em { font-style:italic; }
+
+a:link { color:#69C8FF; text-decoration:none; }
+a:visited { color:#69C8FF; text-decoration:none; }
+a:hover { color:#A3DCFF; text-decoration:underline;}
+a img { border:0; }
+
+h1,h2,h3,h4,h5,h6,p {font-weight:normal;}
+h1 {font-size:24px; letter-spacing:-0.04em;}
+h2 {font-size:21px; letter-spacing:-0.02em;}
+h3 {font-size:18px; letter-spacing:-0.01em;}
+h4 {font-size:16px;}
+p { }
+
+button { cursor:pointer; }
+
+.clear {
+	clear:both;
+	display:block;
+	height:0;
+	overflow:hidden;
+	font-size:0;
+	}
+.clearfix:after {content: ".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/* Layout */
+/* ------------------------------------------------------- */
+#wrap { height:100%; }
+body > #wrap { height:auto; min-height:100%; }
+
+#content {
+	padding-bottom:160px; /* footer height */
+	overflow:hidden; /* float clear */
+	}
+#content #inner {
+	position:relative;
+	width:990px;
+	margin:0 auto;
+	}
+	/* INCLUDE (network/styles/fonts.css) */
+/*============================================================
+ Typography
+============================================================*/
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.75/fonts/ProximaNova-Thin.woff') format('woff');
+  font-weight: 200; font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.75/fonts/ProximaNova-Light.woff') format('woff');
+  font-weight: 300; font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.86/fonts/ProximaNova-Reg.woff') format('woff');
+  font-weight: 400; font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.86/fonts/ProximaNova-Sbold.woff') format('woff');
+  font-weight: 500; font-style: normal;
+}
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.86/fonts/ProximaNova-Bold.woff') format('woff');
+  font-weight: 700; font-style: normal;
+}
+
+@font-face {
+  font-family: 'talent';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.86/icons/fonts/talent.woff') format('woff');
+  font-weight: normal; font-style: normal;
+}
+
+@font-face {
+  font-family: 'social';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.103/fonts/social.woff') format('woff');
+  font-weight: normal; font-style: normal;
+}
+
+@font-face {
+  font-family: 'carbonmade';
+  src: url('http://cmsites.a.ssl.fastly.net/kits/1.109/fonts/carbonmade.woff') format('woff');
+  font-weight: normal; font-style: normal;
+}
+
+
+
+
+/*============================================================
+ UI icons fonts
+============================================================*/
+span.top:before,
+nav li .scoutSign:before,
+nav li .watchlistLink:before, 
+nav .userPic:before,
+.paging .next a:before,
+.paging .prev a:before,
+.headerSearch button:before,
+.headerSearch .autoSuggest:before, 
+.portfolio .meta .watchWrap:before,
+#mask .close:before,
+#messageComposer .header h4:before,
+#followerList .location:before,
+#feedbackGiver ul.types li:before {
+  font-family: 'talent';
+  position: absolute;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-.container { 
-	width:270px;
-	height:150px;
-	position:absolute;
-	left:50%;
-	top:50%;
-	margin:-125px 0 0 -225px;
-} 
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.about {
-  margin: 70px auto 40px;
-  padding: 8px;
-  width: 260px;
-  font: 10px/18px 'Lucida Grande', Arial, sans-serif;
-  color: #666;
+#links a:before {
+  font-family: 'social';
+  speak: none;
+  line-height: 28px;
+  font-style: normal;
+  font-weight: normal;
   text-align: center;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.25);
-  background: #eee;
-  background: rgba(250, 250, 250, 0.8);
-  border-radius: 4px;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 6px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 6px rgba(0, 0, 0, 0.2);
-}
-.about a {
-  color: #333;
-  text-decoration: none;
-  border-radius: 2px;
-  -webkit-transition: background 0.1s;
-  -moz-transition: background 0.1s;
-  -o-transition: background 0.1s;
-  transition: background 0.1s;
-}
-.about a:hover {
-  text-decoration: none;
-  background: #fafafa;
-  background: rgba(255, 255, 255, 0.7);
+  -webkit-font-smoothing: antialiased;
 }
 
-.about-links {
-  height: 30px;
-}
-.about-links > a {
-  float: left;
-  width: 50%;
-  line-height: 30px;
-  font-size: 12px;
+
+/*============================================================
+ Wrappers for standalone font symbols
+============================================================*/
+.feedback i,
+.scout.profile h6 i,
+.searchHead .info i,
+.portfolio .meta h5 i,
+.profileHead .userInfo h2 i {
+  font-family: 'talent';
+  speak: none;
+  line-height: 1;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
 }
 
-.about-author {
-  margin-top: 5px;
-}
-.about-author > a {
-  padding: 1px 3px;
-  margin: 0 -1px;
-}
-
-/*
- * Copyright (c) 2012-2013 Thibaut Courouble
- * http://www.cssflow.com
- *
- * Licensed under the MIT License:
- * http://www.opensource.org/licenses/mit-license.php
- */
-body, .login-submit, .login-submit:before, .login-submit:after {
-  background: #373737 url("../img/bg.png") 0 0 repeat;
+/* INCLUDE (authentication/styles/signin.css) */
+/*============================================================
+ =Signin
+============================================================*/
+body.signin,
+body.passwordresets { 
+	background: #69b4ff; 
+	font-family: 'ProximaNova';
+	-webkit-font-smoothing: antialiased;
 }
 
-body {
-  font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #404040;
-}
-
-a {
-  color: #00a1d2;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.login {
-  position: relative;
-  margin: 80px auto;
-  width: 400px;
-  padding-right: 32px;
-  font-weight: 300;
-  color: #a8a7a8;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
-}
-.login p {
-  margin: 0 0 10px;
-}
-
-input, button, label {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.homepage
-{
-  padding-left: 100px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-input[type=text], input[type=password] {
-  padding: 0 10px;
-  width: 300px;
-  height: 40px;
-  color: #bbb;
-  text-shadow: 1px 1px 1px black;
-  background: rgba(0, 0, 0, 0.16);
-  border: 0;
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
-}
-input[type=text]:focus, input[type=password]:focus {
-  color: white;
-  background: rgba(0, 0, 0, 0.1);
-  outline: 0;
-}
-
-label {
-  float: left;
-  width: 100px;
+body.signin .close {
+  position: absolute;
+  top: 17px; left: 30px;
+  color: #999;
+  font-size: 18px;
   line-height: 40px;
-  padding-right: 10px;
-  font-weight: 100;
-  text-align: right;
-  letter-spacing: 1px;
-}
-
-.forgot-password {
-  padding-left: 100px;
-  font-size: 13px;
-  font-weight: 100;
-  letter-spacing: 1px;
-}
-
-.login-submit {
-  position: absolute;
-  top: 12px;
-  right: 0;
-  width: 48px;
-  height: 48px;
-  padding: 8px;
-  border-radius: 32px;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
-}
-.login-submit:before, .login-submit:after {
-  content: '';
-  z-index: 1;
-  position: absolute;
-}
-.login-submit:before {
-  top: 28px;
-  left: -4px;
-  width: 4px;
-  height: 10px;
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
-}
-.login-submit:after {
-  top: -4px;
-  bottom: -4px;
-  right: -4px;
-  width: 36px;
-}
-
-.login-button {
-  position: relative;
-  z-index: 2;
-  width: 48px;
-  height: 48px;
-  padding: 0 0 48px;
-  /* Fix wrong positioning in Firefox 9 & older (bug 450418) */
-  text-indent: 120%;
-  white-space: nowrap;
-  overflow: hidden;
-  background: none;
-  border: 0;
-  border-radius: 24px;
+  font-weight: 500;
   cursor: pointer;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.1);
-  /* Must use another pseudo element for the gradient background because Webkit */
-  /* clips the background incorrectly inside elements with a border-radius.     */
+  opacity: 0.8;
 }
-.login-button:before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
-  background: #00a2d3;
-  border-radius: 24px;
-  background-image: -webkit-linear-gradient(top, #00a2d3, #0d7796);
-  background-image: -moz-linear-gradient(top, #00a2d3, #0d7796);
-  background-image: -o-linear-gradient(top, #00a2d3, #0d7796);
-  background-image: linear-gradient(to bottom, #00a2d3, #0d7796);
-  -webkit-box-shadow: inset 0 0 0 1px #00a2d3, 0 0 0 5px rgba(0, 0, 0, 0.16);
-  box-shadow: inset 0 0 0 1px #00a2d3, 0 0 0 5px rgba(0, 0, 0, 0.16);
-}
-.login-button:active:before {
-  background: #0591ba;
-  background-image: -webkit-linear-gradient(top, #0591ba, #00a2d3);
-  background-image: -moz-linear-gradient(top, #0591ba, #00a2d3);
-  background-image: -o-linear-gradient(top, #0591ba, #00a2d3);
-  background-image: linear-gradient(to bottom, #0591ba, #00a2d3);
-}
-.login-button:after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  left: 12px;
-  width: 25px;
-  height: 19px;
-  background: url("../img/arrow.png") 0 0 no-repeat;
-}
+body.signin .close:before { content: ''; }
+body.signin .close:hover { opacity: 1; } 
 
-::-moz-focus-inner {
-  border: 0;
+body.signin #content,
+body.passwordresets #content {
+  position: absolute;
+  top: 50%;  margin-top: -200px;
+  left: 50%; margin-left: -250px;
   padding: 0;
+  width: 500px;
+}
+body.signin #content #inner,
+body.passwordresets #content #inner {
+  width: 500px;
+} 
+body.signin #content { overflow: visible; }
+
+.topHead {
+	height: 40px;
+	padding: 17px 30px;
+}
+.topHead .signUp {
+  display: none;
+	position: relative;
+	height: 40px; line-height:  40px;
+	font-size: 18px;
+	font-weight: 500;
+	color: #28a5db;
+	padding: 0 25px 0 0;
+	float: right;
+	opacity: 0.8;
+}
+.topHead .signUp:hover { text-decoration: none; opacity: 1; }
+.topHead .signUp:after {
+	content: '→';
+	font-size: 19px;
+	position: absolute;
+	top: 2px; right: 0;
+}
+.topHead .logo {
+  display: block;
+  width: 110px; height: 40px;
+  float: left;
+  background-image: url('img/loginImages/logotype-grey.svg'); 
+  background-size: 110px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  color: transparent; 
 }
 
-.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
-  line-height: 40px;
-  background: #282828;
+
+#signinLogo {
+	position: relative;
+	display: block;
+	width: 100px; height: 100px;
+	margin: 0 auto;
+	text-align:center;
+	background-image: url('../img/loginImages/FOXCIRCLE.png');
+	background-repeat: no-repeat;
+	background-size: 100px;
+	background-position: center;
+	background-color: #FFF;
+	border-radius: 100%;
+	z-index: 10;
 }
-.lt-ie9 .login-submit {
+#signinBlock {
+	margin: -25px auto 0;
+	width: 400px;
+	padding: 45px 20px 20px;
+	background-color: #fff;
+	box-shadow: 0 0 2px rgba(0,0,0,0.05);
+	border-radius: 8px;
+}
+
+#signinBlock  h1 {
+	font-size: 28px;
+	line-height: 30px;
+	color: #FF69B4;
+	text-align: center;
+	margin: 0 0 30px;
+	letter-spacing: 0;
+}
+#signinBlock  h2 {
+	font-size: 28px;
+	line-height: 30px;
+	color: #FF69B4;
+	text-align: center;
+	margin: 0 0 15px;
+	letter-spacing: 0;
+}
+
+
+#signinBlock .formContainer {}
+
+
+#signinBlock .formContainer .signinRow {
+	display: block;
+	position: relative;
+	margin: 0 0 15px;
+}
+
+#signinBlock .formContainer .signinRow label {
+	display:block;
+	padding-bottom:6px;
+	font-size:18px;
+	color:#888;
+	}
+#signinBlock input.fillin {
+	padding: 15px;
+	height: 30px; line-height: 30px;
+	width: 370px;
+	border: none;
+	border-bottom: 2px solid #f2f3f3;
+	font-size: 22px;
+	color: rgba(128, 130, 133, 1);
+	font-weight: 400; 
+	background-color: #fff;
+	font-family: 'ProximaNova';
+	-webkit-font-smoothing: antialiased;
+  box-shadow: none;
+  border-radius: 0;
+}
+#signinBlock input.fillin:focus  { border-bottom: 2px solid #95d2ec; }
+#signinBlock .error input.fillin { border-bottom: 2px solid #ed656c; }
+
+#signinBlock ::-webkit-input-placeholder { color: rgba(128, 130, 133, 0.7); font-weight: 400; }
+#signinBlock      :-ms-input-placeholder { color: rgba(128, 130, 133, 0.7); font-weight: 400; }
+#signinBlock          ::-moz-placeholder { color: rgba(128, 130, 133, 0.7); font-weight: 400; }
+#signinBlock           :-moz-placeholder { color: rgba(128, 130, 133, 0.7); font-weight: 400; }
+
+#signinBlock input.fillin:focus::-webkit-input-placeholder { color: rgba(0, 0, 0, 0.15); }
+#signinBlock      input.fillin:focus:-ms-input-placeholder { color: rgba(0, 0, 0, 0.15); }
+#signinBlock          input.fillin:focus::-moz-placeholder { color: rgba(0, 0, 0, 0.15); }
+#signinBlock           input.fillin:focus:-moz-placeholder { color: rgba(0, 0, 0, 0.15); }
+
+
+#signinBlock .resetPassLink {
+	position: absolute;
+	top: 0px; right: 0px;
+	padding: 0 15px 0 5px;
+	font-size: 14px;
+	line-height: 60px;
+	color: #28a5db;
+	opacity: 0.7;
+	z-index: 20;
+}
+#signinBlock .resetPassLink:hover { text-decoration: none; opacity: 1; } 
+
+#signinBlock .buttonWrap {
+	padding: 15px 0 3px;
+}
+
+
+#signinBlock .field .message {
+/*	display: none;
+	padding: 25px 0 0;
+	text-align: center;
+	font-size: 18px;
+	line-height: 20px;
+	color: #ef6469;*/
+  opacity: 0;
+  display: block;
   position: absolute;
-  top: 12px;
-  right: -28px;
-  padding: 4px;
+  top: inherit; right: auto;
+  bottom: 15px; left: 100%;
+  width: auto; height: auto;
+  max-width: 310px;
+  padding: 10px 15px;
+  margin: 7px 0 0 0px;
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  font-weight: 500;
+  background: #f8ca5c;
+  color: #7d532b;
+  border-radius: 3px;
+  white-space: nowrap;
+  z-index: 10;
+  -webkit-transition: margin-left .2s ease-in-out, opacity .2s ease-in-out;
+     -moz-transition: margin-left .2s ease-in-out, opacity .2s ease-in-out;
+          transition: margin-left .2s ease-in-out, opacity .2s ease-in-out;
 }
-.lt-ie9 .login-submit:before, .lt-ie9 .login-submit:after {
+#signinBlock .field .message:before {
+  display: block;
+  position: absolute;
+  left: -6px; right: auto; top: 14px;
+  content:"";
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 6px 6px 6px 0;
+  border-color: transparent #f8ca5c transparent transparent;
+}
+#signinBlock .field.invalid .message {
+  display: block;
+  opacity: 1;
+  margin-left: 6px;
+}
+/*#signinBlock .field.passRow .message { margin-left: -160px; }
+#signinBlock .field.invalid.passRow .message { margin-left: -170px; }*/
+
+#signinBlock .error .message {
   display: none;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 20px;
+  color: #ef6469;
+} 
+#signinBlock form.error .error .message { display: block; }
+
+#signinBlock input.button {
+  -webkit-appearance: none;
+  display: inline-block;
+  height: 70px;  line-height: 70px;
+  width: 100%;
+  padding: 0 25px; 
+  font-family: "ProximaNova";
+  color: white;
+  font-weight: 500;
+  font-size: 26px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-background-clip: padding-box;
+  -webkit-transition: background-color 0.03s ease-in;
+          transition: background-color 0.03s ease-in;
+  -webkit-font-smoothing: antialiased;
+	background-color: #b4ff69;
+	/*box-shadow: 0 3px 0 0 #3ba8a5;*/
 }
-.lt-ie9 .login-button {
-  line-height: 48px;
+/*#signinBlock input.button:focus { border-top: solid 3px #fff; box-shadow: 0 3px 0 0 #43c1be;; }*/
+
+#signinBlock input.button:disabled { opacity: 0.5; pointer-events: none; }
+
+#signinBlock form.sending input.button { 
+  font-size: 0;
+  background: #43c1be center no-repeat url('img/loginImages/bounce45C1BE-1x.gif'); 
 }
-.lt-ie9 .about {
-  background: #313131;
+
+/*============================================================
+ =Reset
+============================================================*/
+
+.reset #signinBlock p.description {
+	color: rgba(0,0,0,0.5);
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+	margin: 0 0 20px;
 }
+
+#content:after { 
+  display: block; content: "."; 
+  clear: both; 
+  font-size: 0; line-height: 0; height: 0; overflow: hidden; 
+}
+
+
