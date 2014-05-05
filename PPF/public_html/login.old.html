@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
 <title>Trivia Login</title>	
 <link rel="stylesheet" type="text/css" href="css/loginLayout.css" />	
 <script type="text/javascript" src ="js/mainJS.js"></script>
-</head>
-
 <body class="signin">
+<!--
+<div class="topHead">
+	<a href="index.html">Take me home!</a>
+</div>
+-->
 <div id="content">
 	<div id="inner">
-    <center><img src="images/main.png"></center>
-	  <h1 id="signinLogo"><a href="index.html"></a></h1>
+		<h1 id="signinLogo"><a href="index.html"></a></h1>
 		
 		<div id="signinBlock">
 			<!--<h1>Eagan High School Trivia</h1>-->
 			<span class="formContainer">			    
  				<form id="signInForm" action="verify.php" method="POST">
 					<span>
-					<input class="fillin" autofocus name="Username" value="" title="Username" type="Username" required placeholder="Username" />
+						<input class="fillin" autofocus name="username" value="" title="Username" type="Username" required placeholder="Username" />
 						<span class="message"></span>
 					</span>
 					
 					<span>
-					<input class="fillin" name="password" title="Password" type="password" required placeholder="Password" />
+						<input class="fillin" name="password" title="Password" type="password" required placeholder="Password" />
 				
 						<span class="message"></span>
 					</span>
@@ -39,13 +40,13 @@
 
 						<input class="button" type="submit" alt="Sign in!" value="Let's Go" />
 					</div>
-			</form>	
+				</form>	
 			</span>
 		</div>
 	</div>
-    <center>
-<a href="index.html"><img src="images/househome.png" width="50" height="50"></a>
-</center>
 </div>
+	
+	
 </body>
+
 </html>
