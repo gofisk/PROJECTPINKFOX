@@ -67,7 +67,12 @@ i, em { font-style:italic; }
 a:link { color:#69C8FF; text-decoration:none; }
 a:visited { color:#69C8FF; text-decoration:none; }
 a:hover { color:#A3DCFF; text-decoration:underline;}
-a img { border:0; }
+a img { 
+border:0; 
+color: #FFF;
+padding: 2em;
+
+}
 
 h1,h2,h3,h4,h5,h6,p {font-weight:normal;}
 h1 {font-size:24px; letter-spacing:-0.04em;}
@@ -218,7 +223,7 @@ nav .userPic:before,
 ============================================================*/
 body.signin,
 body.passwordresets { 
-	background: #69b4ff; 
+	background: #252A2F; 
 	font-family: 'ProximaNova';
 	-webkit-font-smoothing: antialiased;
 }
@@ -276,21 +281,21 @@ body.signin #content { overflow: visible; }
   display: block;
   width: 110px; height: 40px;
   float: left;
-  background-image: url('img/loginImages/logotype-grey.svg'); 
+  background-image: url('../images/circlestop.png'); 
   background-size: 110px;
   background-repeat: no-repeat;
   background-position: right center;
   color: transparent; 
 }
 
-
+/*
 #signinLogo {
 	position: relative;
 	display: block;
 	width: 100px; height: 100px;
 	margin: 0 auto;
 	text-align:center;
-	background-image: url('../img/loginImages/FOXCIRCLE.png');
+	background-image: url('../images/circlestop.png');
 	background-repeat: no-repeat;
 	background-size: 100px;
 	background-position: center;
@@ -298,11 +303,13 @@ body.signin #content { overflow: visible; }
 	border-radius: 100%;
 	z-index: 10;
 }
+*/
+
 #signinBlock {
 	margin: -25px auto 0;
 	width: 400px;
 	padding: 45px 20px 20px;
-	background-color: #fff;
+
 	box-shadow: 0 0 2px rgba(0,0,0,0.05);
 	border-radius: 8px;
 }
@@ -324,22 +331,6 @@ body.signin #content { overflow: visible; }
 	letter-spacing: 0;
 }
 
-
-#signinBlock .formContainer {}
-
-
-#signinBlock .formContainer .signinRow {
-	display: block;
-	position: relative;
-	margin: 0 0 15px;
-}
-
-#signinBlock .formContainer .signinRow label {
-	display:block;
-	padding-bottom:6px;
-	font-size:18px;
-	color:#888;
-	}
 #signinBlock input.fillin {
 	padding: 15px;
 	height: 30px; line-height: 30px;
@@ -462,7 +453,7 @@ body.signin #content { overflow: visible; }
   -webkit-transition: background-color 0.03s ease-in;
           transition: background-color 0.03s ease-in;
   -webkit-font-smoothing: antialiased;
-	background-color: #b4ff69;
+	background-color: #00AEFF;
 	/*box-shadow: 0 3px 0 0 #3ba8a5;*/
 }
 /*#signinBlock input.button:focus { border-top: solid 3px #fff; box-shadow: 0 3px 0 0 #43c1be;; }*/
