@@ -2,6 +2,8 @@ PROJECTPINKFOX
 ==============
 Version 0.1 04/25/2014
 
+***THIS PROJECT IS NO LONGER UNDER ACTIVE DEVELOPMENT***
+
 DESCRIPTION 
 ===================================================================
 Project Pink Fox is the code name for an online based trivia system.
